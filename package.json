@@ -1,0 +1,37 @@
+{
+  "name": "ShoppingList",
+  "version": "1.0.0",
+  "description": "Turn recipes into a shopping list app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend": "nodemon index.js",
+    "frontend": "npm start --prefix frontend",
+    "bootstrap": "npm install --include=dev && cd frontend && npm install --include=dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadavey91/ShoppingList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadavey91/ShoppingList/issues"
+  },
+  "homepage": "https://github.com/jadavey91/ShoppingList#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fetch": "^1.1.0",
+    "mongoose": "^5.12.5",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.2"
+  }
+}
