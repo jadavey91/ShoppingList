@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const AddRecipeRouter = require("./routes/AddRecipeRouter");
+const DeleteRecipeRouter = require("./routes/DeleteRecipeRouter");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,6 +26,7 @@ connection.once('open', function () {
 })
 
 app.use("/addrecipe", AddRecipeRouter);
+app.use("/deleterecipe", DeleteRecipeRouter);
 
 app.listen(5000, () => {
   console.log("online");

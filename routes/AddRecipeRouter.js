@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const AddRecipe = require("../models/AddRecipe");
+const Recipe = require("../models/Recipe");
 
 router.post("/", async (req, res) => {
   const recipeName = req.body.recipeName;
@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
   const mealType = req.body.mealType;
   const pageNumber = req.body.pageNumber;
 
-  new AddRecipe({
+  new Recipe({
     recipeName: recipeName,
     book: book,
     mealType: mealType,
