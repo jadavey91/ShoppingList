@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const Recipe = require("../models/Recipe");
 
-router.delete("/", (req, res) => {
+router.delete("/:recipeName", (req, res) => {
   Recipe.findOneAndDelete({ recipeName: req.params.recipeName }, (err, obj) => {
     if (err) {
-        console.log(err);
-        res.statusCode(500).json({ msg: err });
+      console.log(err);
+      res.statusCode(500).json({ msg: err });
     } else {
-        res.status(200).json(obj);
+      res.status(200).json(obj);
     }
-});
+  });
 });
 
 module.exports = router;
