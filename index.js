@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const AddRecipeRouter = require("./routes/AddRecipeRouter");
 const DeleteRecipeRouter = require("./routes/DeleteRecipeRouter");
+const GetRecipeRouter = require("./routes/GetRecipeRouter");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,6 +28,7 @@ connection.once('open', function () {
 
 app.use("/addrecipe", AddRecipeRouter);
 app.use("/deleterecipe", DeleteRecipeRouter);
+app.use("/viewrecipe", GetRecipeRouter);
 
 app.listen(5000, () => {
   console.log("online");
